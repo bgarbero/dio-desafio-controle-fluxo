@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-import exception.ParametrosInvalidosException;
+import model.entities.ParametrosInvalidosException;
 
 public class Contador {
 
@@ -17,23 +17,23 @@ public class Contador {
 
 		try {
 			contar(parametroUm, parametroDois);
-
-		} catch (ParseExcpetion e) {
-			// imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro }
-
+		} catch (ParametrosInvalidosException e) {
+			e.printStackTrace();
+			System.out.println("O segundo parâmetro deve ser maior que o primeiro");
 		}
-
+		sc.close();
 	}
-	
+
 	static String contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
 		if (parametroDois < parametroUm) {
 			throw new ParametrosInvalidosException();
-			return ("O segundo parâmetro deve ser maior que o primeiro");
 		} else {
+			StringBuilder resultado = new StringBuilder();
 			int contagem = parametroDois - parametroUm;
 			for (int i = 0; i <= contagem; i++) {
-				return ("Imprimindo o número ", i);
+				 resultado.append("Imprimindo o número ").append(i).append("\n");
 			}
+			return resultado.toString();
 		}
 	}
 
