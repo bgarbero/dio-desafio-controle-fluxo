@@ -36,5 +36,4 @@ public class Contador {
 			return resultado.toString();
 		}
 	}
-
 }
