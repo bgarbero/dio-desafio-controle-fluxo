@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-import model.entities.ParametrosInvalidosException;
+import Exception.ParametrosInvalidosException;
 
 public class Contador {
 
@@ -24,16 +24,14 @@ public class Contador {
 		sc.close();
 	}
 
-	static String contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
+	static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
 		if (parametroDois < parametroUm) {
 			throw new ParametrosInvalidosException();
 		} else {
-			StringBuilder resultado = new StringBuilder();
 			int contagem = parametroDois - parametroUm;
-			for (int i = 0; i <= contagem; i++) {
-				 resultado.append("Imprimindo o número ").append(i).append("\n");
+			for (Integer i = 1; i <= contagem; i++) {
+				System.out.println("Imprimindo o número "+ i);
 			}
-			return resultado.toString();
 		}
 	}
 }

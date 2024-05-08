@@ -1,4 +1,4 @@
-package model.entities;
+package Exception;
 
 public class ParametrosInvalidosException extends Exception{
 
